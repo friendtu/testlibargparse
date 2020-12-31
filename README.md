@@ -1,7 +1,6 @@
-# testlibargparse
-Test libargparse
+# try libargparse by creating a simple program to do add 
 
-# Crate image
+# Crate runtime image
 docker build -t testlibargparse .
 
 # Run it

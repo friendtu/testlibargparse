@@ -25,7 +25,6 @@ int main(int argc, const char** argv) {
     //Show the arguments
     std::cout << "args.number1: " << args.number1 << "\n";
     std::cout << "args.number2: " << args.number2 << "\n";
-    std::cout << "\n";
 
     //Do work
     int result=args.number1+args.number2;
