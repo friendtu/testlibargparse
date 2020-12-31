@@ -1,7 +1,9 @@
-FROM ubuntu:18.04 as builder
-
+FROM ubuntu:18.04 AS base
 RUN set -ex;			\
-    apt-get update;		\
+    apt-get update;		
+
+FROM base AS builder
+RUN set -ex;			\
     apt-get install -y cmake git g++;	\
     mkdir -p /usr/src;		\
     cd /usr/src;		\
@@ -23,9 +25,7 @@ RUN set -ex;	\
 
 CMD ["add"]
 
-FROM ubuntu:18.04 as runtime
-RUN set -ex; 		\
-    apt-get update
+FROM base AS runtime
 COPY --from=builder /usr/local/bin /usr/local/bin
 CMD ["add"]
 
